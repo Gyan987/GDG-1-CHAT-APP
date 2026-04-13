@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Web Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="authScreen" class="auth-screen">
+        <div class="auth-card">
+            <h1>Welcome to WhatsApp</h1>
+            <p>Create your unique username to start chatting.</p>
+            <label for="signupUsername">Username</label>
+            <input id="signupUsername" type="text" placeholder="e.g. aman_01" maxlength="20" />
+            <label for="signupDisplayName">Display Name</label>
+            <input id="signupDisplayName" type="text" placeholder="Your Name" maxlength="30" />
+            <button id="signupBtn" type="button">Continue</button>
+            <p id="authError" class="auth-error"></p>
+        </div>
+    </div>
+
+    <div id="app" class="app hidden">
+        <aside id="sidebar" class="sidebar">
+            <header class="sidebar-header">
+                <button id="mobileCloseSidebar" class="icon-btn" type="button">Close</button>
+                <div class="me-summary">
+                    <div id="myAvatar" class="avatar"></div>
+                    <div>
+                        <p id="myDisplayName" class="name"></p>
+                        <p id="myUsername" class="username"></p>
+                    </div>
+                </div>
+                <button id="openMyProfile" class="icon-btn" type="button">Profile</button>
+            </header>
+
+            <div class="search-wrap">
+                <input id="searchUsers" type="text" placeholder="Search or start new chat" />
+            </div>
+
+            <ul id="contacts" class="contacts"></ul>
+
+            <div class="sidebar-actions">
+                <button id="newUserBtn" class="primary" type="button">Create New User</button>
+                <button id="switchUserBtn" type="button">Switch User</button>
+            </div>
+        </aside>
+
+        <main class="chat-panel">
+            <header class="chat-header">
+                <button id="mobileOpenSidebar" class="icon-btn" type="button">Menu</button>
+                <div id="activeProfile" class="active-profile">
+                    <div id="activeAvatar" class="avatar"></div>
+                    <div>
+                        <p id="chatPartnerName" class="name">Select a user</p>
+                        <p id="chatPartnerHandle" class="username">No conversation selected</p>
+                    </div>
+                </div>
+                <button id="viewOtherProfile" class="icon-btn" type="button">View Profile</button>
+            </header>
+
+            <section id="messages" class="messages" aria-live="polite"></section>
+
+            <div id="selectionBar" class="selection-bar hidden">
+                <p><span id="selectedCount">0</span> selected</p>
+                <div>
+                    <button id="deleteMe" type="button">Delete for me</button>
+                    <button id="deleteEveryone" class="danger" type="button">Delete for everyone</button>
+                    <button id="cancelSelection" type="button">Cancel</button>
+                </div>
+            </div>
+
+            <footer class="composer">
+                <textarea id="messageInput" rows="1" placeholder="Type a message"></textarea>
+                <button id="sendBtn" class="primary" type="button">Send</button>
+            </footer>
+        </main>
+    </div>
+
+    <div id="myProfileModal" class="modal hidden" role="dialog" aria-modal="true">
+        <div class="modal-content">
+            <h2>My Profile</h2>
+            <div class="profile-preview">
+                <div id="profileAvatarMe" class="avatar"></div>
+                <div>
+                    <p id="profileNameMe" class="name"></p>
+                    <p id="profileUserMe" class="username"></p>
+                </div>
+            </div>
+            <label for="editDisplayName">Edit display name</label>
+            <input id="editDisplayName" type="text" maxlength="30" placeholder="Display name" />
+            <div class="profile-actions">
+                <button id="saveProfile" class="primary" type="button">Save</button>
+                <button id="signOut" type="button">Sign out</button>
+                <button id="closeMyProfile" type="button">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="otherProfileModal" class="modal hidden" role="dialog" aria-modal="true">
+        <div class="modal-content">
+            <h2>Contact Profile</h2>
+            <div class="profile-preview">
+                <div id="profileAvatarOther" class="avatar"></div>
+                <div>
+                    <p id="profileNameOther" class="name"></p>
+                    <p id="profileUserOther" class="username"></p>
+                </div>
+            </div>
+            <div class="profile-actions">
+                <button id="closeOtherProfile" type="button">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="newUserModal" class="modal hidden" role="dialog" aria-modal="true">
+        <div class="modal-content">
+            <h2>Create Additional User</h2>
+            <label for="newUsername">Username</label>
+            <input id="newUsername" type="text" maxlength="20" placeholder="unique username" />
+            <label for="newDisplayName">Display Name</label>
+            <input id="newDisplayName" type="text" maxlength="30" placeholder="name" />
+            <div class="profile-actions">
+                <button id="createNewUser" class="primary" type="button">Create</button>
+                <button id="closeNewUser" type="button">Cancel</button>
+            </div>
+            <p id="newUserError" class="auth-error"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
