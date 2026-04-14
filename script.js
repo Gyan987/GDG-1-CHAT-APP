@@ -11,10 +11,9 @@ const state = {
   activeChatUserId: null,
   selectedMessageIds: new Set()
 };
-
 const refs = {};
 
-function q(id) {
+function q(id) { 
   return document.getElementById(id);
 }
 

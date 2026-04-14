@@ -305,6 +305,13 @@ button {
 	grid-template-columns: 1fr auto;
 	gap: 10px;
 }
+.composer button {
+    border: none;
+    background: var(--green-mid);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+}
 
 .composer textarea {
 	resize: none;
