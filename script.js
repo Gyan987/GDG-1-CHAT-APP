@@ -57,7 +57,7 @@ function wireEvents() {
 
   refs.searchUsers.addEventListener("input", renderContacts);
 
-  refs.openMyProfile.addEventListener("click", openMyProfile);
+  refs.openMyProfile.addEventListener("click", openMyProfile)
   refs.closeMyProfile.addEventListener("click", () => refs.myProfileModal.classList.add("hidden"));
   refs.saveProfile.addEventListener("click", saveProfile);
   refs.signOut.addEventListener("click", signOut);
@@ -88,6 +88,7 @@ function loadState() {
   state.messages = readJson(KEYS.messages, []);
   state.currentUserId = localStorage.getItem(KEYS.currentUserId);
 }
+
 
 function persistState() {
   localStorage.setItem(KEYS.users, JSON.stringify(state.users));
